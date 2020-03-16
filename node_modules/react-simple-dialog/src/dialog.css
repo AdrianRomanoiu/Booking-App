@@ -1,0 +1,85 @@
+.btnprimary {
+    color: #fff;
+    background-color: #45c01a;
+    border-color: #45c01a;
+    box-shadow: 1px 1px 1px #888888;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 500;
+    text-align: center;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    line-height: 1.5;
+    padding: 4px 15px;
+    font-size: 12px;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    position: relative;
+    color: rgba(0, 0, 0, 0.65);
+    background-color: #fff;
+    border-color: #d9d9d9;
+}
+
+.dialog {
+	position: fixed;
+	padding: 5px;
+	width: 250px;
+	top: 200px;
+	left: e("calc(50% - 125px)");
+	height: 150px;
+	background-color: #fff;
+    border-radius: 5px;
+    z-index: 1000;
+    padding: 15px;
+}
+
+.dialog .header {
+    height: 30px;
+
+    .title {
+        font-size: 16px;
+        line-height: 30px;
+        text-shadow: 1px 1px 1px #666;
+    }
+
+    .close {
+        position: absolute;
+        right: 15px;
+        font-size: 20px;
+    }
+}
+
+.dialog .content {
+    margin-top: 20px;
+}
+
+.dialog .buttonarea {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+}
+
+.mask {
+	position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #373737;
+    background-color: rgba(55, 55, 55, 0.6);
+    height: 100%;
+    filter: alpha(opacity=50);
+    z-index: 999;
+}

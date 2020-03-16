@@ -1,0 +1,99 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Starter Template · Bootstrap</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  </head>
+  <body>
+
+<main role="main" class="container">
+<h3>Filter Location</h3>
+      <form method="GET" action="/search">
+        <div class="form-row">
+            <div class="form-group col-12">
+                <label for="inputAddress">Location</label>
+                <div class="input-group">
+                    <input class="form-control py-2 border-right-0 border" type="search" name="Name" placeholder="Name of the location.." />
+                    <span class="input-group-append">
+                        <div class="input-group-text bg-transparent">
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+          <div class="form-row">
+            <div class="form-group col-12">
+                <label for="inputAddress">Address</label>
+                <div class="input-group">
+                    <input class="form-control py-2 border-right-0 border" type="search" name="Address" placeholder="Address contains..." />
+                    <span class="input-group-append">
+                        <div class="input-group-text bg-transparent">
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+     <div class="form-row">
+        <div class="form-group col-md-2 col-lg-2 ">
+             <label for="inputCheckIn">Check-in</label>
+             <input type="date" class="form-control" id="inputCheckIn" name="CheckIn">
+         </div>
+
+        <div class="form-group col-md-2 col-lg-2 ">
+             <label for="inputCheckOut">Check-out</label>
+             <input type="date" class="form-control" id="inputCheckOut" name="CheckOut">
+         </div>
+                  </div>
+
+        <div >
+             <label >Nr of rooms</label>
+         <select name="nrOfRooms">
+         <option value="0">Select</option>
+         <option value="1">1</option>
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         </select>
+
+      <button type="submit" class="btn btn-primary"  >Search</button>
+      </div>
+    </form>
+    <hr />
+    <div class="row" >
+        <ul>
+            {%  for location in queryset %}
+                <li>
+                    <div><span>Name: {{ location.name }}</span></div>
+                    <div><span>Address: {{ location.address }}</span></div>
+                    <div><span>PhoneNumber: {{ location.phoneNumber }}</span></div>
+                    <div><span>EmailAddress: {{ location.emailAddress }}</span></div>
+                    <div><span>WebSiteAddress: {{ location.webSiteAddress }}</span></div>
+                    <div><span>ImagePath: {{ location.imagePath }}</span></div>
+                    <div><span>Nr of rooms: {{ location.nrOfRooms }}</span></div>
+                    <a href=`booking/${location.locationId}`>Chose this</a>
+                </li>
+                <hr />
+            {% endfor %}
+
+        </ul>
+    </div>
+
+
+</main><!-- /.container -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
